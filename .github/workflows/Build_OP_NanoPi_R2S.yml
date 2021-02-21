@@ -76,7 +76,6 @@ jobs:
         ./scripts/feeds install -a
         
     - name: Import external feeds
-      working-directory: ./openwrt
       run: |
        chmod +x ./external_feeds.sh && ./external_feeds.sh
 
