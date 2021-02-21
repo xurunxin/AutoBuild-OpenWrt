@@ -84,11 +84,11 @@ jobs:
       env:
         CONFIG_FILE: 'NanoPi_R2S.config'
       run: |
-        rm -f openwrt/.config*
+        rm -f openwrt/.config
         touch openwrt/.config
-        echo -e >> openwrt/.config
-        [ -e $CONFIG_FILE ] cat $CONFIG_FILE >> openwrt/.config
-        sed -i 's/^[ \t]*//g' ./.config
+        # echo -e >> openwrt/.config
+        [ -e $CONFIG_FILE ] && cat $CONFIG_FILE >> openwrt/.config
+        sed -i 's/^[ \t]*//g' openwrt/.config
         chmod +x ./customize.sh && ./customize.sh
         cd openwrt && make defconfig
         
