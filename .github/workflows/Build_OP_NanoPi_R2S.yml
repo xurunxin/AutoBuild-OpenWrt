@@ -128,7 +128,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         tag_name: ${{ steps.assemble_artifact.outputs.release_tag }}
-        release_name: R2S ${{ steps.assemble_artifact.outputs.release_tag }}
+        release_name: ${{ steps.assemble_artifact.outputs.release_tag }}
         draft: false
         prerelease: false
     - name: Upload Release Asset
